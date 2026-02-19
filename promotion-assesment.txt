@@ -1,0 +1,36 @@
+React I4 - Promotion Assessment
+
+Project Scenario
+You are tasked with designing and implementing a Parking Management System for a residential community. The system must handle parking spot allocation, assign spots through a raffle that rotates every three months, and ensure fairness by prioritizing residents who were not selected in the previous cycle.
+The solution should also be designed with future expansion in mind. Potential advanced features may include:
+•	Real-time vehicle detection using license plate recognition cameras
+•	Support for different vehicle types (Car, Motorcycle, Bicycle)
+•	Importing and exporting data from spreadsheets
+You have full freedom to decide how to implement the features. Adding extra functionality, thoughtful details, or enhancements beyond the core requirements is encouraged.
+
+Core Features to Implement
+1.	Parking Allocation System
+a.	Allow residents to register for the parking raffle.
+b.	Allocate available parking spots fairly.
+c.	Rotate assignments every 3 months.
+d.	Track residents’ parking history to prioritize fairness.
+2.	Roles
+a.	Admin role can edit the list of registered residents for raffle.
+b.	Admin role can manually run the raffle and restart the 3 months cycle.
+c.	Residents should be able to register for the raffle.
+d.	Residents can see their parking spots history if any.
+3.	Data Management
+a.	Simple API for data storage and fetching.
+b.	Implement caching for frequently accessed data.
+4.	Security and Validations
+a.	Implement basic security and authentication logic.
+b.	Validate and sanitize inputs.
+5.	Unit testing and Documentation.
+a.	All components should have coherent unit tests.
+b.	Documentation of usage of the components,
+c.	Comments and placeholders for upcoming features aiming scalability.
+
+Deliverables
+A GitHub repo for a small React app implementing the core features above.
+
+
