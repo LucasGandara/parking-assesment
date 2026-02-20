@@ -17,7 +17,7 @@ Draft and refine proposal document for a change set. This command is primarily f
 
 > **SDD Process**: Read `.augment/skills/sdd-state-management.md` for state management guidance.
 
-> **Research**: When needed, delegate to `@librarian` for codebase context. See `.augment/skills/research.md` (project-local) or `~/.augment/skills/research.md` (global) for guidance.
+> **Research**: When needed, delegate to `@librarian` for codebase context. See `.claude/skills/research/SKILL.md` for guidance.
 
 ### Setup
 

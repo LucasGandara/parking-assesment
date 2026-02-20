@@ -15,7 +15,7 @@ Research codebase and create an implementation plan.
 
 > **SDD Process**: Read `.augment/skills/sdd-state-management.md` for state management guidance.
 
-> **Research**: When you need to investigate codebase, delegate to `@librarian` with a specific research question. See `.augment/skills/research.md` (project-local) or `~/.augment/skills/research.md` (global) for guidance.
+> **Research**: When you need to investigate codebase, delegate to `@librarian` with a specific research question. See `.claude/skills/research/SKILL.md` for guidance.
 
 > **External Research**: For dependencies, APIs, or version-specific topics, use `websearch` or `codesearch`. See `.augment/skills/keep-current.md` (project-local) or `~/.augment/skills/keep-current.md` (global) for guidance.
 

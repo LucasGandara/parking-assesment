@@ -16,7 +16,9 @@ pnpm test         # Run unit/component tests (Vitest + React Testing Library)
 pnpm test:e2e     # Run E2E tests (Playwright)
 ```
 
-> Note: This is a Windows environment. Shell is PowerShell, but use Unix path syntax in commands.
+> Note: This is a Windows environment. Shell is PowerShell, Do not use any
+command alias, for instance: prefet Set-Location -Path <Path> instead of cd
+<path>
 
 ## Architecture
 

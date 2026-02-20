@@ -5,7 +5,9 @@ argument-hint: <change-set-name>
 
 # Discovery
 
-Understand high-level architectural requirements for implementing change-set specs. This phase answers big questions about how change fits into—or extends—the existing architecture.
+Understand high-level architectural requirements for implementing change-set
+specs. This phase answers big questions about how change fits into—or
+extends—the existing architecture.
 
 ## Purpose
 
@@ -24,7 +26,7 @@ Discovery is NOT about planning implementation details. It's about:
 
 > **SDD Process (Required)**: You MUST locate and read the state management guidance. Try project-local first: `.augment/skills/sdd-state-management.md`. If it does not exist, you MUST fall back to the global location: `~/.augment/skills/sdd-state-management.md`.
 
-> **Research (Required When Delegating)**: If you need to delegate to `@librarian` for codebase context, you MUST locate and follow the delegation guidance. Try `.augment/skills/research.md` first; if it does not exist, you MUST try `~/.augment/skills/research.md`.
+> **Research (Required When Delegating)**: If you need to delegate to `@librarian` for codebase context, you MUST locate and follow the delegation guidance. See `.claude/skills/research/SKILL.md` for guidance.
 
 > **Architecture (Required)**: You MUST locate and use the architecture guidance. Try project-local first: `.augment/skills/architecture-fit-check.md` and `.augment/skills/architecture-workshop.md`. If either file is missing locally, you MUST try the corresponding global file(s): `~/.augment/skills/architecture-fit-check.md` and `~/.augment/skills/architecture-workshop.md`.
 

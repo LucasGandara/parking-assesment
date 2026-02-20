@@ -9,8 +9,7 @@ argument-hint: <change-set-name>
 
 Before doing anything else, you MUST read and follow these skill files:
 
-- `.augment/skills/research.md`
-- `~/.augment/skills/research.md`
+- `.claude/skills/research/SKILL.md`
 
 If required skill content is not available (cannot be found/read), you MUST stop and ask the user how to proceed. Do NOT continue without the required guidance.
 

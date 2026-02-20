@@ -13,9 +13,12 @@ Explore the problem space collaboratively to develop a seed document.
 
 ## Instructions
 
-> **SDD Process**: If unsure about phase progression or state management, read `.augment/skills/sdd-state-management.md` (project-local) or `~/.augment/skills/sdd-state-management.md` (global).
+> **SDD Process**: If unsure about phase progression or state management, read
+`.augment/skills/sdd-state-management.md` (project-local) or 
+~/.augment/skills/sdd-state-management.md` (global).
 
-> **Research**: When grounding ideation in reality, delegate to `@librarian`. See `.augment/skills/research.md` (project-local) or `~/.augment/skills/research.md` for guidance.
+> **Research**: When grounding ideation in reality, delegate to `@librarian`.
+See `.claude/skills/research/SKILL.md` for guidance.
 
 ### Setup
 
@@ -24,11 +27,13 @@ Explore the problem space collaboratively to develop a seed document.
 
 ### Entry Check
 
-Apply state entry check logic from `.augment/skills/sdd-state-management.md`.
+Apply state entry check logic from
+`.augment/skills/sdd-state-management.md`.
 
 ### Research Phase (As Needed)
 
-During ideation, research can help ground ideas in reality. **Delegate to `@librarian`** when you need to understand:
+During ideation, research can help ground ideas in reality. **Delegate to
+`@librarian`** when you need to understand:
 
 - Does something similar already exist in the codebase?
 - What constraints does the current architecture impose?

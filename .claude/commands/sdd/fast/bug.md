@@ -15,7 +15,7 @@ Investigate and fix a bug. This command triages the issue, researches the codeba
 
 > **SDD Process**: Read `.augment/skills/sdd-state-management.md` for state management guidance.
 
-> **Research**: When investigating root cause, delegate to `@librarian`. See `.augment/skills/research.md` (project-local) or `~/.augment/skills/research.md` (global) for guidance.
+> **Research**: When investigating root cause, delegate to `@librarian`. See `.claude/skills/research/SKILL.md` for guidance.
 
 ### Gather Context
 
