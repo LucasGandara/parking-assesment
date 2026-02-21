@@ -1,3 +1,7 @@
 export function App() {
-  return <div />;
+  return (
+    <div>
+      Parking raffler
+    </div>
+  );
 }

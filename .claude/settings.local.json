@@ -14,7 +14,8 @@
       "Bash(powershell -NoProfile -Command:*)",
       "Bash(volta:*)",
       "Bash(pnpm add:*)",
-      "Bash(pnpm --filter parking-raffler test:*)"
+      "Bash(pnpm --filter parking-raffler test:*)",
+      "Bash(pnpm exec vite build:*)"
     ]
   }
 }

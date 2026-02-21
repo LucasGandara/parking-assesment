@@ -2,11 +2,11 @@
 
 import type { ReactNode } from "react";
 
-interface ButtonProps {
+type ButtonProps = {
   children: ReactNode;
   className?: string;
   appName: string;
-}
+};
 
 export function Button({ children, className, appName }: ButtonProps) {
   return (
