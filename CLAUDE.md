@@ -47,7 +47,7 @@ Each feature follows the pattern: `components/`, `hooks/`, `utils/`, `<feature>.
 
 ### TypeScript
 - Explicit types; no `any`
-- Interfaces over type aliases for object shapes
+- `type` aliases over interfaces for object shapes
 - Named exports over default exports
 
 ### Styling
@@ -63,7 +63,7 @@ import styles from './residents.module.scss';
 ```
 
 ### Code Style
-- Max 80 columns per line
+- **Max 80 columns per line** — enforced by `style/max-len` ESLint rule
 - Alphabetical order for imports, function arguments, object keys, and props
 
 ### Import Order
@@ -78,6 +78,13 @@ import styles from './residents.module.scss';
 - No UI component libraries (no MUI, Chakra, etc.)
 - No TypeScript errors at commit time
 - Run tests before committing
+- **After every code change, verify ESLint compliance** — all rules in
+  `packages/eslint-config/eslint.config.js` must pass. Key rules:
+  - `style/max-len`: max 80 columns per line
+  - `perfectionist/sort-imports`: imports must be sorted
+  - `unicorn/filename-case`: filenames must be kebab-case
+  - `node/no-process-env`: no direct `process.env` access
+  - `ts/consistent-type-definitions`: use `type`, not `interface`
 
 ## Commits
 

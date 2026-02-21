@@ -9,7 +9,12 @@
       "mcp__claude_ai_Excalidraw__export_to_excalidraw",
       "WebSearch",
       "WebFetch(domain:tanstack.com)",
-      "WebFetch(domain:labs.convex.dev)"
+      "WebFetch(domain:labs.convex.dev)",
+      "Bash(powershell -Command:*)",
+      "Bash(powershell -NoProfile -Command:*)",
+      "Bash(volta:*)",
+      "Bash(pnpm add:*)",
+      "Bash(pnpm --filter parking-raffler test:*)"
     ]
   }
 }
