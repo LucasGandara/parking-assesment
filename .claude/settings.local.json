@@ -15,7 +15,10 @@
       "Bash(volta:*)",
       "Bash(pnpm add:*)",
       "Bash(pnpm --filter parking-raffler test:*)",
-      "Bash(pnpm exec vite build:*)"
+      "Bash(pnpm exec vite build:*)",
+      "Bash(pnpm install:*)",
+      "Bash(pnpm --filter parking-e2e exec playwright install:*)",
+      "Bash(cd C:\\\\Users\\\\lucas\\\\Local Documents\\\\Github\\\\parking-assesment:*)"
     ]
   }
 }
