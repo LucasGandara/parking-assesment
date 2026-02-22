@@ -4,7 +4,7 @@ export default antfu({
   type: "app",
   typescript: true,
   formatters: true,
-  ignores: ["convex/_generated/**", "src/routeTree.gen.ts"],
+  ignores: ["convex/generate-keys.mjs", "convex/_generated/**", "src/routeTree.gen.ts"],
   stylistic: {
     indent: 2,
     semi: true,
