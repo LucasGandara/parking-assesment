@@ -1,7 +1,10 @@
-import { createFileRoute } from "@tanstack/react-router";
-
-import { App } from "../app.tsx";
+import { createFileRoute, redirect } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/")({
-  component: App,
+  beforeLoad: ({ context }) => {
+    if (!context.isLoading && !context.isAuthenticated) {
+      throw redirect({ to: "/login" });
+    }
+  },
+  component: () => <div>Dashboard (coming soon)</div>,
 });

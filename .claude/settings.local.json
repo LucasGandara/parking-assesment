@@ -20,7 +20,11 @@
       "Bash(pnpm --filter parking-e2e exec playwright install:*)",
       "Bash(cd C:\\\\Users\\\\lucas\\\\Local Documents\\\\Github\\\\parking-assesment:*)",
       "Bash(cd C:\\\\Users\\\\lucas\\\\Local Documents\\\\Github\\\\parking-assesment\\\\apps\\\\parking-e2e:*)",
-      "Bash(cd C:\\\\Users\\\\lucas\\\\Local Documents\\\\Github\\\\parking-assesment\\\\apps\\\\parking-raffler:*)"
+      "Bash(cd C:\\\\Users\\\\lucas\\\\Local Documents\\\\Github\\\\parking-assesment\\\\apps\\\\parking-raffler:*)",
+      "Bash(cd:*)",
+      "Bash(tail:*)",
+      "Bash(head:*)",
+      "Bash(cat:*)"
     ]
   }
 }
