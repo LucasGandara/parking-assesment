@@ -24,7 +24,19 @@
       "Bash(cd:*)",
       "Bash(tail:*)",
       "Bash(head:*)",
-      "Bash(cat:*)"
+      "Bash(cat:*)",
+      "Bash(cd \"/c/Users/lucas/Local Documents/Github/parking-assesment\" && pnpm --filter parking-raffler check-types 2>&1)",
+      "Bash(cd \"C:/Users/lucas/Local Documents/Github/parking-assesment\" && pnpm turbo check-types 2>&1)",
+      "Bash(cd \"C:/Users/lucas/Local Documents/Github/parking-assesment\" && pnpm turbo lint 2>&1)",
+      "Bash(cd \"C:/Users/lucas/Local Documents/Github/parking-assesment\" && pnpm --filter @repo/ui lint 2>&1)",
+      "Bash(cd \"C:/Users/lucas/Local Documents/Github/parking-assesment\" && pnpm --filter @repo/ui lint:fix 2>&1)",
+      "Bash(cd \"C:/Users/lucas/Local Documents/Github/parking-assesment\" && git add \\\\\n  apps/parking-raffler/package.json \\\\\n  apps/parking-raffler/src/app.scss \\\\\n  apps/parking-raffler/src/main.tsx \\\\\n  apps/parking-raffler/src/routes/login.tsx \\\\\n  apps/parking-raffler/src/routes/register.tsx \\\\\n  apps/parking-raffler/tsconfig.app.json \\\\\n  apps/parking-raffler/vite.config.ts \\\\\n  changes/welcome-page/plans/04.md \\\\\n  changes/welcome-page/state.md \\\\\n  changes/welcome-page/tasks.md \\\\\n  packages/ui/package.json \\\\\n  packages/ui/src/auth-layout.module.scss \\\\\n  packages/ui/src/auth-layout.tsx \\\\\n  packages/ui/src/declarations.d.ts \\\\\n  \"packages/ui/src/styles/\" \\\\\n  pnpm-lock.yaml \\\\\n  && git status 2>&1)",
+      "Bash(cd \"C:/Users/lucas/Local Documents/Github/parking-assesment\" && pnpm turbo lint && pnpm turbo check-types 2>&1)",
+      "Bash(cd \"/c/Users/lucas/Local Documents/Github/parking-assesment\" && pnpm --filter @repo/ui check-types 2>&1)",
+      "Bash(cd \"/c/Users/lucas/Local Documents/Github/parking-assesment\" && pnpm --filter @repo/ui check-types 2>&1 && pnpm --filter @repo/ui lint 2>&1)",
+      "Bash(cd \"/c/Users/lucas/Local Documents/Github/parking-assesment\" && pnpm --filter parking-raffler exec eslint --fix src/routes/login.tsx 2>&1)",
+      "Bash(grep:*)",
+      "Bash(cd \"/c/Users/lucas/Local Documents/Github/parking-assesment\" && pnpm --filter parking-e2e lint 2>&1)"
     ]
   }
 }
