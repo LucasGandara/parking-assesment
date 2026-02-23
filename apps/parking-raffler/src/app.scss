@@ -1,0 +1,94 @@
+// ─── Box sizing ──────────────────────────────────────────────────────────────
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+// ─── Remove browser defaults ─────────────────────────────────────────────────
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+// ─── Body ────────────────────────────────────────────────────────────────────
+
+body {
+  line-height: 1.5;
+  min-height: 100vh;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+// ─── Media elements ──────────────────────────────────────────────────────────
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+// ─── Form elements ───────────────────────────────────────────────────────────
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+// ─── Typography ──────────────────────────────────────────────────────────────
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+// ─── Links ───────────────────────────────────────────────────────────────────
+
+a {
+  color: inherit;
+  text-decoration-skip-ink: auto;
+}
+
+// ─── Lists ───────────────────────────────────────────────────────────────────
+
+ul,
+ol {
+  list-style: none;
+}
+
+// ─── React root ──────────────────────────────────────────────────────────────
+
+#root {
+  isolation: isolate;
+}
+
+// ─── Reduced motion ──────────────────────────────────────────────────────────
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}

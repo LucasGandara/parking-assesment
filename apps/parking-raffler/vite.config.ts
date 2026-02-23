@@ -5,13 +5,23 @@ import react from "@vitejs/plugin-react-swc";
 import { defineConfig } from "vitest/config";
 
 export default defineConfig({
+  css: {
+    preprocessorOptions: {
+      scss: {
+        loadPaths: [
+          path.resolve(__dirname, "../../packages/ui/src/styles"),
+        ],
+      },
+    },
+  },
   plugins: [
     /* Please make sure that '@tanstack/router-plugin'
      * is passed before '@vitejs/plugin-react'
      */
     tanstackRouter({
-      target: "react",
       autoCodeSplitting: true,
+      routeFileIgnorePattern: "\\.(test|spec)\\.(tsx|ts)$",
+      target: "react",
     }),
     react(),
   ],

@@ -14,6 +14,7 @@
     /* Bundler mode */
     "moduleResolution": "bundler",
     "paths": {
+      "@repo/ui/*": ["../../packages/ui/src/*.tsx"],
       "app/*": ["src/*"]
     },
     "types": ["vite/client", "vitest/globals"],

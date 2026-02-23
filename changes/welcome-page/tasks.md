@@ -9,7 +9,7 @@ tests. Each task leaves the repository in a committable, non-broken state.
 
 ## Tasks
 
-### [o] Task 1 — Project scaffolding
+### [x] Task 1 — Project scaffolding
 
 **Description:**
 Initialize the Vite + React + TypeScript project, install all required
@@ -35,7 +35,7 @@ this exists.
 
 ---
 
-### [ ] Task 2 — Convex setup + domain restriction
+### [x] Task 2 — Convex setup + domain restriction
 
 **Description:**
 Initialize Convex in the project and configure Convex Auth with the Password
@@ -59,7 +59,7 @@ attempts will be validated here regardless of what the client sends.
 
 ---
 
-### [ ] Task 3 — TanStack Router + routing rules
+### [x] Task 3 — TanStack Router + routing rules
 
 **Description:**
 Configure TanStack Router with code-based route definitions and implement all
@@ -88,7 +88,7 @@ users, and rendering of auth pages for unauthenticated users.
 
 ---
 
-### [ ] Task 4 — Auth layout component
+### [x] Task 4 — Auth layout component
 
 **Description:**
 Build the shared two-panel layout component used by both `/login` and
@@ -114,7 +114,7 @@ component on both pages.
 
 ---
 
-### [ ] Task 5 — Login page
+### [x] Task 5 — Login page
 
 **Description:**
 Build the login page inside the auth layout: all form fields, the inactive

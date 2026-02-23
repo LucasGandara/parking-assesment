@@ -1,0 +1,35 @@
+// ─── Breakpoints ──────────────────────────────────────────────────────────────
+
+$breakpoint_lg: 1024px;
+
+// ─── Colors — Primary (blue / indigo) ────────────────────────────────────────
+
+$color_primary: #2563eb;
+$color_primary_dark: #1d4ed8;
+$color_indigo: #4338ca;
+$color_primary_light: #dbeafe;
+
+// ─── Colors — Neutrals ───────────────────────────────────────────────────────
+
+$color_white: #fff;
+$color_bg: #f9fafb; // gray-50
+$color_border: #f3f4f6; // gray-100
+$color_border_input: #d1d5db; // gray-300
+$color_text: #111827; // gray-900
+$color_text_muted: #6b7280; // gray-500
+
+// ─── Colors — Semantic ────────────────────────────────────────────────────────
+
+$color_error: #dc2626; // red-600
+
+// ─── Border radius ────────────────────────────────────────────────────────────
+
+$radius_sm: 0.5rem;
+$radius_md: 0.75rem;
+$radius_lg: 1rem;
+
+// ─── Shadows ──────────────────────────────────────────────────────────────────
+
+$shadow_card:
+  0 20px 25px -5px rgba(0, 0, 0, 0.1),
+  0 10px 10px -5px rgba(0, 0, 0, 0.04);

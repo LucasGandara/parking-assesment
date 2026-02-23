@@ -14,6 +14,7 @@ declare module "@tanstack/react-router" {
     router: typeof router;
   }
 }
+
 const router = createRouter({
   context: {
     isAuthenticated: false,
@@ -37,6 +38,5 @@ export function App() {
     <ConvexAuthProvider client={convex}>
       <RouterProviderAuthenticated />
     </ConvexAuthProvider>
-
   );
 }
