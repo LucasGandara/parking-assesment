@@ -1,13 +1,14 @@
-import type { FormEvent } from "react";
+import type { SubmitEvent } from "react";
 import { useAuthActions } from "@convex-dev/auth/react";
-import { AuthLayout } from "@repo/ui/auth-layout";
-
 import {
   createFileRoute,
   Link,
   redirect,
   useNavigate,
 } from "@tanstack/react-router";
+
+import { AuthLayout } from "app/features/auth/components/auth-layout/auth-layout";
+
 import { useState } from "react";
 
 import styles from "./login.module.scss";
@@ -16,7 +17,7 @@ const ADMIN_EMAIL = String(
   import.meta.env.VITE_ADMIN_EMAIL ?? "admin@unosquare.com",
 );
 
-export const Route = createFileRoute("/login")({
+export const Route = createFileRoute("/login/")({
   beforeLoad: ({ context }) => {
     if (!context.isLoading && context.isAuthenticated) {
       throw redirect({ to: "/" });
@@ -39,7 +40,7 @@ export function LoginForm() {
   const [error, setError] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: SubmitEvent<HTMLFormElement>) {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
     setError(null);

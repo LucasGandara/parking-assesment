@@ -1,11 +1,12 @@
-import { AuthLayout } from "@repo/ui/auth-layout";
 import { createFileRoute, redirect } from "@tanstack/react-router";
+
+import { AuthLayout } from "app/features/auth/components/auth-layout/auth-layout";
 
 const ADMIN_EMAIL = String(
   import.meta.env.VITE_ADMIN_EMAIL ?? "admin@unosquare.com",
 );
 
-export const Route = createFileRoute("/register")({
+export const Route = createFileRoute("/register/")({
   beforeLoad: ({ context }) => {
     if (!context.isLoading && context.isAuthenticated) {
       throw redirect({ to: "/" });

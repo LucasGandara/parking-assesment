@@ -9,7 +9,7 @@ export default defineConfig({
     preprocessorOptions: {
       scss: {
         loadPaths: [
-          path.resolve(__dirname, "../../packages/ui/src/styles"),
+          path.resolve(__dirname, "src/shared/styles"),
         ],
       },
     },

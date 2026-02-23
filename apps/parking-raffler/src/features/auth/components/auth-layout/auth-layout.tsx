@@ -1,7 +1,19 @@
-import type { AuthLayoutProps, Feature } from "./types.js";
+import type { ReactNode } from "react";
+
+import { BuildingIcon, CpuIcon, ParkingIcon } from "../icons/icons";
 
 import styles from "./auth-layout.module.scss";
-import { BuildingIcon, CpuIcon, ParkingIcon } from "./icons.js";
+
+type Feature = {
+  description: string;
+  icon: ReactNode;
+  title: string;
+};
+
+type AuthLayoutProps = {
+  adminEmail: string;
+  children: ReactNode;
+};
 
 const PARKING_IMG = "https://images.unsplash.com/photo-1715079166936-1577f93c44fc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=1080";
 
