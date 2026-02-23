@@ -10,7 +10,8 @@
     "lint:fix": "eslint --fix",
     "preview": "vite preview",
     "test": "vitest run",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "check-types": "tsc --noEmit"
   },
   "dependencies": {
     "@convex-dev/auth": "^0.0.90",
