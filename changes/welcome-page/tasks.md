@@ -223,7 +223,7 @@ Auth sign-up integration, and redirect on success.
 
 ---
 
-### [o] Task 7 — Tests
+### [x] Task 7 — Tests
 
 **Description:**
 Write the full test suite covering all auth specs. Unit tests for validation
