@@ -50,6 +50,14 @@ describe("loginForm", () => {
     ).toBeInTheDocument();
   });
 
+  it("sign up link points to /register", () => {
+    render(<LoginForm />);
+
+    expect(
+      screen.getByRole("link", { name: "Sign up" }),
+    ).toHaveAttribute("href", "/register");
+  });
+
   it("renders Forgot password as a non-interactive span", () => {
     render(<LoginForm />);
 

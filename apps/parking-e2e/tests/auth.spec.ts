@@ -57,20 +57,67 @@ test.describe("Register page", () => {
     await page.goto("/register");
   });
 
-  test("renders ParkSmart AI branding in the left panel", async ({ page }) => {
-    await expect(page.getByText("ParkSmart AI").first()).toBeVisible();
+  test("renders ParkSmart AI branding in the left panel", async ({
+    page,
+  }) => {
+    await expect(
+      page.getByText("ParkSmart AI").first(),
+    ).toBeVisible();
   });
 
-  test("has a Sign in link that navigates to /login", async ({ page }) => {
-    // #TODO
-    // await page.getByRole("link", { name: /sign in/i }).click();
-    // await expect(page).toHaveURL(/\/login/);
-    expect(page).toBeDefined();
+  test("renders all 6 registration fields", async ({ page }) => {
+    await expect(page.getByLabel("First name")).toBeVisible();
+    await expect(page.getByLabel("Last name")).toBeVisible();
+    await expect(page.getByLabel("Email")).toBeVisible();
+    await expect(page.getByLabel("Password")).toBeVisible();
+    await expect(page.getByLabel("Building")).toBeVisible();
+    await expect(page.getByLabel("Phone number")).toBeVisible();
+  });
+
+  test("renders phone hint text", async ({ page }) => {
+    await expect(
+      page.getByText("10 digits, no spaces or dashes"),
+    ).toBeVisible();
+  });
+
+  test("renders footer with admin mailto link", async ({ page }) => {
+    const link = page.getByRole("link", {
+      name: "Contact your building administrator",
+    });
+    await expect(link).toBeVisible();
+    await expect(link).toHaveAttribute("href", /^mailto:/);
+  });
+
+  test("Sign in link navigates to /login", async ({ page }) => {
+    await page.getByRole("link", { name: "Sign in" }).click();
+    await expect(page).toHaveURL(/\/login/);
+  });
+
+  test("shows required field errors on empty submit", async ({
+    page,
+  }) => {
+    await page
+      .getByRole("button", { name: "Create Account" })
+      .click();
+    await expect(
+      page.getByRole("alert").first(),
+    ).toBeVisible({ timeout: 5_000 });
+  });
+
+  test("building dropdown shows no-buildings message", async ({
+    page,
+  }) => {
+    await page.getByLabel("Building").click();
+    await expect(
+      page.getByText(/Alicante/),
+    ).toBeVisible({ timeout: 10_000 });
   });
 });
 
 test.describe("Routing", () => {
-  test("navigating to /login renders the login page title", async ({ page }) => {
+  test("navigating to /login renders the login page title", async ({
+    page,
+  }) => {
     await page.goto("/login");
     await expect(
       page.getByRole("heading", { name: "Welcome back" }),

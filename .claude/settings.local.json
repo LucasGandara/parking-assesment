@@ -36,7 +36,12 @@
       "Bash(cd \"/c/Users/lucas/Local Documents/Github/parking-assesment\" && pnpm --filter @repo/ui check-types 2>&1 && pnpm --filter @repo/ui lint 2>&1)",
       "Bash(cd \"/c/Users/lucas/Local Documents/Github/parking-assesment\" && pnpm --filter parking-raffler exec eslint --fix src/routes/login.tsx 2>&1)",
       "Bash(grep:*)",
-      "Bash(cd \"/c/Users/lucas/Local Documents/Github/parking-assesment\" && pnpm --filter parking-e2e lint 2>&1)"
+      "Bash(cd \"/c/Users/lucas/Local Documents/Github/parking-assesment\" && pnpm --filter parking-e2e lint 2>&1)",
+      "Bash(cd \"/c/Users/lucas/Local Documents/Github/parking-assesment/apps/parking-raffler\" && pnpm lint 2>&1)",
+      "Bash(cd \"/c/Users/lucas/Local Documents/Github/parking-assesment/apps/parking-raffler\" && npx eslint --fix convex/auth.ts src/routes/register/index.tsx 2>&1)",
+      "Bash(cd \"/c/Users/lucas/Local Documents/Github/parking-assesment/apps/parking-raffler\" && pnpm check-types 2>&1)",
+      "Bash(cd \"/c/Users/lucas/Local Documents/Github/parking-assesment/apps/parking-raffler\" && pnpm lint 2>&1 && pnpm check-types 2>&1)",
+      "Bash(cd \"C:\\\\Users\\\\lucas\\\\Local Documents\\\\Github\\\\parking-assesment\" && pnpm --filter parking-raffler lint 2>&1 && pnpm --filter parking-raffler check-types 2>&1)"
     ]
   }
 }

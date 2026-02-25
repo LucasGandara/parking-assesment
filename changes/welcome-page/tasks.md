@@ -148,7 +148,7 @@ integration, and inline error handling on failure.
 
 ---
 
-### [ ] Task 6 — Registration page
+### [x] Task 6 — Registration page
 
 **Description:**
 Build the registration page inside the auth layout: all six fields in order,
@@ -223,7 +223,7 @@ Auth sign-up integration, and redirect on success.
 
 ---
 
-### [ ] Task 7 — Tests
+### [o] Task 7 — Tests
 
 **Description:**
 Write the full test suite covering all auth specs. Unit tests for validation
