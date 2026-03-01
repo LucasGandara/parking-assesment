@@ -9,10 +9,21 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as AdminRouteRouteImport } from './routes/admin/route'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as RegisterIndexRouteImport } from './routes/register/index'
 import { Route as LoginIndexRouteImport } from './routes/login/index'
+import { Route as AdminIndexRouteImport } from './routes/admin/index'
+import { Route as AdminUsersRouteImport } from './routes/admin/users'
+import { Route as AdminSpotsRouteImport } from './routes/admin/spots'
+import { Route as AdminRaffleRouteImport } from './routes/admin/raffle'
+import { Route as AdminBuildingsRouteImport } from './routes/admin/buildings'
 
+const AdminRouteRoute = AdminRouteRouteImport.update({
+  id: '/admin',
+  path: '/admin',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -28,39 +39,116 @@ const LoginIndexRoute = LoginIndexRouteImport.update({
   path: '/login/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AdminIndexRoute = AdminIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => AdminRouteRoute,
+} as any)
+const AdminUsersRoute = AdminUsersRouteImport.update({
+  id: '/users',
+  path: '/users',
+  getParentRoute: () => AdminRouteRoute,
+} as any)
+const AdminSpotsRoute = AdminSpotsRouteImport.update({
+  id: '/spots',
+  path: '/spots',
+  getParentRoute: () => AdminRouteRoute,
+} as any)
+const AdminRaffleRoute = AdminRaffleRouteImport.update({
+  id: '/raffle',
+  path: '/raffle',
+  getParentRoute: () => AdminRouteRoute,
+} as any)
+const AdminBuildingsRoute = AdminBuildingsRouteImport.update({
+  id: '/buildings',
+  path: '/buildings',
+  getParentRoute: () => AdminRouteRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/admin': typeof AdminRouteRouteWithChildren
+  '/admin/buildings': typeof AdminBuildingsRoute
+  '/admin/raffle': typeof AdminRaffleRoute
+  '/admin/spots': typeof AdminSpotsRoute
+  '/admin/users': typeof AdminUsersRoute
+  '/admin/': typeof AdminIndexRoute
   '/login/': typeof LoginIndexRoute
   '/register/': typeof RegisterIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/admin/buildings': typeof AdminBuildingsRoute
+  '/admin/raffle': typeof AdminRaffleRoute
+  '/admin/spots': typeof AdminSpotsRoute
+  '/admin/users': typeof AdminUsersRoute
+  '/admin': typeof AdminIndexRoute
   '/login': typeof LoginIndexRoute
   '/register': typeof RegisterIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/admin': typeof AdminRouteRouteWithChildren
+  '/admin/buildings': typeof AdminBuildingsRoute
+  '/admin/raffle': typeof AdminRaffleRoute
+  '/admin/spots': typeof AdminSpotsRoute
+  '/admin/users': typeof AdminUsersRoute
+  '/admin/': typeof AdminIndexRoute
   '/login/': typeof LoginIndexRoute
   '/register/': typeof RegisterIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/login/' | '/register/'
+  fullPaths:
+    | '/'
+    | '/admin'
+    | '/admin/buildings'
+    | '/admin/raffle'
+    | '/admin/spots'
+    | '/admin/users'
+    | '/admin/'
+    | '/login/'
+    | '/register/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/login' | '/register'
-  id: '__root__' | '/' | '/login/' | '/register/'
+  to:
+    | '/'
+    | '/admin/buildings'
+    | '/admin/raffle'
+    | '/admin/spots'
+    | '/admin/users'
+    | '/admin'
+    | '/login'
+    | '/register'
+  id:
+    | '__root__'
+    | '/'
+    | '/admin'
+    | '/admin/buildings'
+    | '/admin/raffle'
+    | '/admin/spots'
+    | '/admin/users'
+    | '/admin/'
+    | '/login/'
+    | '/register/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AdminRouteRoute: typeof AdminRouteRouteWithChildren
   LoginIndexRoute: typeof LoginIndexRoute
   RegisterIndexRoute: typeof RegisterIndexRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/admin': {
+      id: '/admin'
+      path: '/admin'
+      fullPath: '/admin'
+      preLoaderRoute: typeof AdminRouteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -82,11 +170,67 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LoginIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/admin/': {
+      id: '/admin/'
+      path: '/'
+      fullPath: '/admin/'
+      preLoaderRoute: typeof AdminIndexRouteImport
+      parentRoute: typeof AdminRouteRoute
+    }
+    '/admin/users': {
+      id: '/admin/users'
+      path: '/users'
+      fullPath: '/admin/users'
+      preLoaderRoute: typeof AdminUsersRouteImport
+      parentRoute: typeof AdminRouteRoute
+    }
+    '/admin/spots': {
+      id: '/admin/spots'
+      path: '/spots'
+      fullPath: '/admin/spots'
+      preLoaderRoute: typeof AdminSpotsRouteImport
+      parentRoute: typeof AdminRouteRoute
+    }
+    '/admin/raffle': {
+      id: '/admin/raffle'
+      path: '/raffle'
+      fullPath: '/admin/raffle'
+      preLoaderRoute: typeof AdminRaffleRouteImport
+      parentRoute: typeof AdminRouteRoute
+    }
+    '/admin/buildings': {
+      id: '/admin/buildings'
+      path: '/buildings'
+      fullPath: '/admin/buildings'
+      preLoaderRoute: typeof AdminBuildingsRouteImport
+      parentRoute: typeof AdminRouteRoute
+    }
   }
 }
 
+interface AdminRouteRouteChildren {
+  AdminBuildingsRoute: typeof AdminBuildingsRoute
+  AdminRaffleRoute: typeof AdminRaffleRoute
+  AdminSpotsRoute: typeof AdminSpotsRoute
+  AdminUsersRoute: typeof AdminUsersRoute
+  AdminIndexRoute: typeof AdminIndexRoute
+}
+
+const AdminRouteRouteChildren: AdminRouteRouteChildren = {
+  AdminBuildingsRoute: AdminBuildingsRoute,
+  AdminRaffleRoute: AdminRaffleRoute,
+  AdminSpotsRoute: AdminSpotsRoute,
+  AdminUsersRoute: AdminUsersRoute,
+  AdminIndexRoute: AdminIndexRoute,
+}
+
+const AdminRouteRouteWithChildren = AdminRouteRoute._addFileChildren(
+  AdminRouteRouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AdminRouteRoute: AdminRouteRouteWithChildren,
   LoginIndexRoute: LoginIndexRoute,
   RegisterIndexRoute: RegisterIndexRoute,
 }

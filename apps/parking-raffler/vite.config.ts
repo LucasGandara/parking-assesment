@@ -28,6 +28,7 @@ export default defineConfig({
   resolve: {
     alias: {
       "app/": `${path.resolve(__dirname, "src")}/`,
+      "~convex/": `${path.resolve(__dirname, "convex")}/`,
     },
   },
   test: {

@@ -1,7 +1,8 @@
 import type { RouterContext } from "./types";
 import { ConvexAuthProvider } from "@convex-dev/auth/react";
 import { createRouter, RouterProvider } from "@tanstack/react-router";
-import { ConvexReactClient, useConvexAuth } from "convex/react";
+import { ConvexReactClient, useConvexAuth, useQuery } from "convex/react";
+import { api } from "~convex/_generated/api";
 import { routeTree } from "./routeTree.gen";
 
 const convex = new ConvexReactClient(
@@ -17,6 +18,7 @@ declare module "@tanstack/react-router" {
 
 const router = createRouter({
   context: {
+    isAdmin: false,
     isAuthenticated: false,
     isLoading: true,
   } satisfies RouterContext,
@@ -25,9 +27,11 @@ const router = createRouter({
 
 function RouterProviderAuthenticated() {
   const { isAuthenticated, isLoading } = useConvexAuth();
+  const currentUser = useQuery(api.users.currentUser);
+  const isAdmin = currentUser?.role === "admin";
   return (
     <RouterProvider
-      context={{ isAuthenticated, isLoading }}
+      context={{ isAdmin, isAuthenticated, isLoading }}
       router={router}
     />
   );

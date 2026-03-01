@@ -19,7 +19,7 @@ import { useQuery } from "convex/react";
 
 import { Component, useState } from "react";
 
-import { api } from "../../../convex/_generated/api";
+import { api } from "~convex/_generated/api";
 import styles from "./register.module.scss";
 
 const ADMIN_EMAIL = String(

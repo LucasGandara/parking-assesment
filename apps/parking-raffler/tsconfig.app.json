@@ -14,7 +14,8 @@
     /* Bundler mode */
     "moduleResolution": "bundler",
     "paths": {
-      "app/*": ["src/*"]
+      "app/*": ["src/*"],
+      "~convex/*": ["convex/*"]
     },
     "types": ["vite/client", "vitest/globals"],
     "allowImportingTsExtensions": true,

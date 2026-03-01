@@ -17,6 +17,18 @@ const sidebars: SidebarsConfig = {
             "specs/auth/routing",
           ],
         },
+        "specs/not-found",
+        {
+          type: "category",
+          label: "Admin",
+          items: [
+            "specs/admin/access-control",
+            "specs/admin/buildings",
+            "specs/admin/layout",
+            "specs/admin/placeholders",
+            "specs/admin/users",
+          ],
+        },
       ],
     },
   ],

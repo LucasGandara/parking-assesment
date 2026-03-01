@@ -35,7 +35,7 @@ vi.mock("convex/react", () => ({
   useQuery: mockUseQuery,
 }));
 
-vi.mock("../../../convex/_generated/api", () => ({
+vi.mock("~convex/_generated/api", () => ({
   api: { buildings: { list: {} } },
 }));
 
