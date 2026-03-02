@@ -1,4 +1,5 @@
-import { Link, Outlet } from "@tanstack/react-router";
+import { useAuthActions } from "@convex-dev/auth/react";
+import { Link, Outlet, useNavigate } from "@tanstack/react-router";
 
 import styles from "./admin-layout.module.scss";
 
@@ -10,6 +11,14 @@ const NAV_LINKS = [
 ] as const;
 
 export function AdminLayout() {
+  const { signOut } = useAuthActions();
+  const navigate = useNavigate();
+
+  async function handleLogout() {
+    await signOut();
+    await navigate({ to: "/login" });
+  }
+
   return (
     <div className={styles.admin_layout}>
       <nav className={styles.admin_layout__sidebar}>
@@ -30,6 +39,13 @@ export function AdminLayout() {
             </li>
           ))}
         </ul>
+        <button
+          className={styles.admin_layout__logout}
+          onClick={handleLogout}
+          type="button"
+        >
+          Log out
+        </button>
       </nav>
       <main className={styles.admin_layout__main}>
         <Outlet />

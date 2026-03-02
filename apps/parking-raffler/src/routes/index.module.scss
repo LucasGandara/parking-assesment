@@ -1,0 +1,9 @@
+@use "variables" as *;
+
+.index {
+  align-items: center;
+  background-color: $color_bg;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+}

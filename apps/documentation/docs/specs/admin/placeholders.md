@@ -8,9 +8,8 @@ depends_on:
 
 ## Overview
 
-The Spots and Raffle sections of the admin dashboard are not yet
-implemented. Each renders a placeholder panel to communicate that
-the feature is forthcoming.
+The Spots and Raffle sections of the admin dashboard have full
+implementations and no longer render placeholder content.
 
 ## Access
 
@@ -18,7 +17,7 @@ the feature is forthcoming.
 
 ## Requirements
 
-- The system SHALL display a "Coming Soon" message in the Spots
+- The system SHALL NOT display a "Coming Soon" message in the Spots
   section.
-- The system SHALL display a "Coming Soon" message in the Raffle
+- The system SHALL NOT display a "Coming Soon" message in the Raffle
   section.

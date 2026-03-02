@@ -25,8 +25,26 @@ export const remove = mutation({
       .collect();
     if (assigned.length > 0) {
       throw new ConvexError(
-        `Cannot delete — ${assigned.length} resident${assigned.length === 1 ? "" : "s"} assigned to this building.`,
+        `Cannot delete — ${assigned.length} `
+        + `resident${assigned.length === 1 ? "" : "s"} `
+        + `assigned to this building.`,
       );
+    }
+    const spots = await ctx.db
+      .query("spots")
+      .withIndex("by_building", q =>
+        q.eq("buildingId", args.id))
+      .collect();
+    for (const spot of spots) {
+      const spotAssignments = await ctx.db
+        .query("assignments")
+        .withIndex("by_spot_and_period", q =>
+          q.eq("spotId", spot._id))
+        .collect();
+      for (const assignment of spotAssignments) {
+        await ctx.db.delete(assignment._id);
+      }
+      await ctx.db.delete(spot._id);
     }
     await ctx.db.delete(args.id);
   },

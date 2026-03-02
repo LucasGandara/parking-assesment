@@ -44,6 +44,28 @@
     }
   }
 
+  &__logout {
+    appearance: none;
+    background: none;
+    border: none;
+    border-radius: $radius_sm;
+    color: $color_text_muted;
+    cursor: pointer;
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin-top: auto;
+    padding: 0.5rem 0.75rem;
+    text-align: left;
+    width: calc(100% - 1.5rem);
+    margin-inline: 0.75rem;
+
+    &:hover {
+      background-color: $color_bg;
+      color: $color_text;
+    }
+  }
+
   &__main {
     flex: 1;
     overflow-y: auto;

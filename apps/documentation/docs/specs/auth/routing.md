@@ -3,7 +3,7 @@
 ## Overview
 
 Defines how the application routes users between auth pages and the
-application dashboard based on authentication state.
+application based on authentication state and role.
 
 ## Access
 
@@ -17,6 +17,10 @@ application dashboard based on authentication state.
   to `/login`.
 - WHEN an unauthenticated user navigates to `/register` the system SHALL
   render the registration page.
+- WHEN an authenticated user with role "admin" navigates to `/` the
+  system SHALL redirect to `/admin`.
+- WHEN an authenticated user with role "resident" navigates to `/` the
+  system SHALL render the resident dashboard.
 
 ### Auth-page guard
 
