@@ -1,0 +1,11 @@
+import type { ReactNode } from "react";
+
+export type Feature = {
+  description: string;
+  icon: ReactNode;
+  title: string;
+};
+
+export type AuthLayoutProps = {
+  children: ReactNode;
+};

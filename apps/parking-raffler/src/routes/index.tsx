@@ -25,12 +25,12 @@ function IndexRoute() {
   const { isLoading } = useConvexAuth();
   const currentUser = useQuery(api.users.currentUser);
 
-  if (isLoading || currentUser === undefined) {
-    return <div>Loading…</div>;
+  if (currentUser === null) {
+    return <Navigate to="/login" />;
   }
 
-  if (currentUser?.role === "admin") {
-    return <Navigate to="/admin" />;
+  if (isLoading || currentUser === undefined) {
+    return <div>Loading…</div>;
   }
 
   return (

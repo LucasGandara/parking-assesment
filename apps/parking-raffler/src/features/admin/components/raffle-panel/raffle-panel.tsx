@@ -1,23 +1,13 @@
-import type { FormEvent } from "react";
-import type { Doc, Id } from "~convex/_generated/dataModel";
-
+import type { SubmitEvent } from "react";
+import type { Id } from "~convex/_generated/dataModel";
+import type { PeriodEntryProps, SpotAssignmentRowProps } from "./types";
 import { useMutation, useQuery } from "convex/react";
 import { ConvexError } from "convex/values";
 import { useState } from "react";
-
 import { api } from "~convex/_generated/api";
-
+import { PHASE_LABELS } from "./consts";
 import styles from "./raffle-panel.module.scss";
-
-// ── Helpers ───────────────────────────────────────────────
-
-function formatDate(ts: number): string {
-  return new Date(ts).toLocaleDateString();
-}
-
-function dateToTs(dateStr: string): number {
-  return new Date(dateStr).getTime();
-}
+import { dateToTs, formatDate } from "./utils";
 
 // ── CreatePeriodForm ──────────────────────────────────────
 
@@ -30,7 +20,7 @@ function CreatePeriodForm() {
   const [startDate, setStartDate] = useState("");
 
   async function handleSubmit(
-    e: FormEvent<HTMLFormElement>,
+    e: SubmitEvent<HTMLFormElement>,
   ) {
     e.preventDefault();
     setError(null);
@@ -150,17 +140,6 @@ function CreatePeriodForm() {
 }
 
 // ── PeriodEntry ───────────────────────────────────────────
-
-const PHASE_LABELS: Record<string, string> = {
-  archived: "Archived",
-  current: "Current",
-  previous: "Previous",
-};
-
-type PeriodEntryProps = {
-  onRaffleComplete: (totalFilled: number) => void;
-  period: Doc<"periods">;
-};
 
 function PeriodEntry({
   onRaffleComplete,
@@ -311,18 +290,6 @@ function PeriodEntry({
 }
 
 // ── SpotAssignmentRow ─────────────────────────────────────
-
-type Resident = Doc<"users"> & {
-  buildingName: string | null;
-};
-
-type SpotAssignmentRowProps = {
-  currentUserId: Id<"users"> | null;
-  residents: Resident[];
-  spot: Doc<"spots"> & {
-    currentAssigneeName: string | null;
-  };
-};
 
 function SpotAssignmentRow({
   currentUserId,

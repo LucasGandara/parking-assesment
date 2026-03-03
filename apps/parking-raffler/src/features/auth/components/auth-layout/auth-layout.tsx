@@ -1,36 +1,9 @@
-import type { ReactNode } from "react";
-
-import { BuildingIcon, CpuIcon, ParkingIcon } from "../icons/icons";
-
+import type { AuthLayoutProps } from "./types";
+import { ParkingIcon } from "../icons/icons";
 import styles from "./auth-layout.module.scss";
+import { ADMIN_EMAIL, FEATURES, PARKING_IMG } from "./consts";
 
-type Feature = {
-  description: string;
-  icon: ReactNode;
-  title: string;
-};
-
-type AuthLayoutProps = {
-  adminEmail: string;
-  children: ReactNode;
-};
-
-const PARKING_IMG = "https://images.unsplash.com/photo-1715079166936-1577f93c44fc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=1080";
-
-const FEATURES: Feature[] = [
-  {
-    description: "Track parking availability instantly with IoT sensors",
-    icon: <CpuIcon />,
-    title: "Real-time Monitoring",
-  },
-  {
-    description: "Easy access for building residents to manage slots",
-    icon: <BuildingIcon />,
-    title: "Resident Portal",
-  },
-];
-
-export function AuthLayout({ adminEmail, children }: AuthLayoutProps) {
+export function AuthLayout({ children }: AuthLayoutProps) {
   return (
     <div className={styles.auth_layout}>
 
@@ -122,7 +95,7 @@ export function AuthLayout({ adminEmail, children }: AuthLayoutProps) {
             {"Need help? "}
             <a
               className={styles.auth_layout__help_link}
-              href={`mailto:${adminEmail}`}
+              href={`mailto:${ADMIN_EMAIL}`}
             >
               Contact your building administrator
             </a>

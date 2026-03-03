@@ -6,16 +6,9 @@ import {
   redirect,
   useNavigate,
 } from "@tanstack/react-router";
-
 import { AuthLayout } from "app/features/auth/components/auth-layout/auth-layout";
-
 import { useState } from "react";
-
 import styles from "./login.module.scss";
-
-const ADMIN_EMAIL = String(
-  import.meta.env.VITE_ADMIN_EMAIL ?? "admin@unosquare.com",
-);
 
 export const Route = createFileRoute("/login/")({
   beforeLoad: ({ context }) => {
@@ -28,7 +21,7 @@ export const Route = createFileRoute("/login/")({
 
 function LoginPage() {
   return (
-    <AuthLayout adminEmail={ADMIN_EMAIL}>
+    <AuthLayout>
       <LoginForm />
     </AuthLayout>
   );
